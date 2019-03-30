@@ -13,6 +13,7 @@ public class Server implements TCPConnectionListener {
         new Server();
     }
 
+
     private final ArrayList<TCPConnection> connections = new ArrayList<>();
 
     private Server() {
@@ -53,9 +54,9 @@ public class Server implements TCPConnectionListener {
         System.out.println("TCPConnecion error " + e);
     }
 
-    private void sendToAllConnection(String value){
-        System.out.println(value);
-        for (TCPConnection t: connections)
-            t.sendString(value);
+    private void sendToAllConnection(String value) {
+        for (TCPConnection t : connections) {
+                t.sendString(value);
+        }
     }
 }
